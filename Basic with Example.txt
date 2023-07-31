@@ -1,0 +1,152 @@
+---------------------------------------------------------------------------------------------------------
+
+	Java Lamda Expressions 
+	
+
+Lamda expression is an ananyomous function ( nameless function, does not have return type, does not have any access modifiers)
+
+- To bring the Functional Programming features in java we use Lamda Expressions 
+- To improve the Code optimization / Consize Code (Reduce the Code) 
+
+
+Advantages:- 
+--------------
+
+1. In lamda expression we don't need to specify the type of the variable
+2. We can remove the parentesis of the variable also if only single variable is there 
+
+
+
+
+
+Example 1---> 
+
+Normal Method: 
+	
+	public void m1()
+		{ 
+		
+		syso("Welcome"); 
+		}
+
+		
+Lamda Expression: (Remove access modifier and void) 
+
+	()->
+	{
+	syso("Welcome"); 
+	}
+	
+	OR 
+	
+	()-> syso("Welcmome");
+	
+	
+
+Example 2---> 
+
+
+	public void m1(int a, int b) 
+		{
+		syso(a+b);
+		}
+
+
+Lamda Expression: (In lamda expression we don't need to specify the type of the variable)
+
+	(int a, int b)-> syso(a+b); 
+	
+	(a,  b)-> syso(a+b); (Most concized way of writing)  
+	
+	
+
+Example 3---> 
+
+
+	public void m1(int a) 
+		{ 
+			return(a*a); 
+		} 
+		
+Lamda Expression: 
+	
+	(int a) -> { return(a*a); } ; 
+	
+	(a) -> a*a;   (We can remove the parentesis of the variable also if only single variable is there  ) 
+	
+	a -> a*a;  [ Most concized way of writing ]
+
+
+
+--------------------------------------
+
+Few Lamda expression to check valid or not 
+
+
+	n -> return n*n;    [NOT VALID --> when we use retrun statement we must include it into the curly braces ]          
+	
+	n -> {return n*n;}; [ VALID ]
+	
+	n -> {return n*n };	[NOT VALID ---> the semicolon is missed after return ]
+	
+	n -> {n*n;};        [NOT VALID ---> as we are not using the return so no need to curly braces ]
+	
+	n -> n*n;			[ VALID ] 	
+
+
+---------------------------------------------------------------------------------------------------------------
+
+Once we write the Lamda Expression we need to invoke for that we need to understand the " Functional Interface concept ".
+i.e Lamda Expressions can only be invoked through Fucntional Interafces. 
+
+---------------------------------
+	Functional Interface 
+---------------------------------
+
+Interface only contains the abstract methods (i.e. the method is only having the defination but not implementaion)
+
+- Functional Interface are those which contains only 1 abstract methods (Single Abstract Method [SAM]), 
+  but we can have any no. of Default & Static Methods.
+  
+
+Some Functional Interface in Java:
+----------------------------------
+1. Runnable --> run()
+2. Callable --> call()
+3. Comparable--> compareTo()
+4. ActionListener--> actionPerformer()
+
+
+
+Examples:- 
+
+	@FucntionalInterface
+	interface I()
+		{ 
+			public void m1();  //Only 1 abstract method 
+			
+			default void m2();  //Default Method 
+			
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
